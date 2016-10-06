@@ -1,0 +1,30 @@
+{
+  "name": "procurement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --progress --config ./webpack.config.js",
+    "test": "echo \"It's a hackathon, there are no tests!\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "forever": "^0.15.2",
+    "react": "^15.3.2",
+    "react-columns": "^0.2.2",
+    "react-dom": "^15.3.2",
+    "react-favicon": "0.0.5",
+    "react-redux": "^4.4.5",
+    "react-typeahead": "^2.0.0-alpha.5",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "redux-devtools": "^3.3.1",
+    "webpack": "^1.13.2"
+  }
+}
