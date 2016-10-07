@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 const SearchResults = React.createClass({
   
@@ -20,36 +21,34 @@ const SearchResults = React.createClass({
       
     }
     
-    const queryResult = new Promise((resolve, reject) => {
-      // result.open("GET", "http://54.164.84.202:8080/v1/index", true);
+    // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
 
-      result.open('POST', 'http://54.164.84.202:8080/v1/search', true);
-      const data = JSON.stringify({"query":"Marbig"});
-      result.setRequestHeader('Content-Type', 'application/json');
-      result.send(data)
-      if (result.status != 0) reject(result.status);
-      resolve();
-      console.log('Request sent');
-    }).then(
-      () => {
-        console.log('Request resolved', result);
-        console.log('response', result.response);
-        // response = JSON.parse(result.responseText);
+    result.open('POST', 'http://54.164.84.202:8080/v1/search', false);
+    const data = JSON.stringify({"query":this.props.state.query});
+    result.setRequestHeader('Content-Type', 'application/json');
+    result.send(data)
 
-        return response.hits.hits.map((item, i) => {
-          const itemName = item._source.desc;
-          const vendor = item._source.vendor;
-          console.log('itemName', itemName);
-          return (
-            <p key={i}>{itemName} bought from {vendor}</p>
-          );
-        });
-      },
-      status => console.log('Error displaying query:', status)
-    )
+    console.log('Request sent');
+    console.log('Request resolved', result);
+    // response = JSON.parse(result.responseText);
+
+    return response.hits.hits.map((item, i) => {
+      const score = item._score;
+      var itemName = item._source.desc;
+      if (itemName.charAt(0) === '[') {
+        itemName = itemName.substr(1);
+      }
+      const vendor = item._source.vendor;
+      console.log('itemName', itemName);
+      return (
+        <p key={i}>{score} | {itemName} bought from {vendor}</p>
+      );
+    });
   },
   
   render: function() {
+    console.log('this', this);
+    if (!this.props.state) return null
     return (
       <div>
         <h2>Your Search Results:</h2>
@@ -59,4 +58,17 @@ const SearchResults = React.createClass({
   }
 });
 
-module.exports = SearchResults;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    state
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {}
+}
+
+module.exports = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchResults);

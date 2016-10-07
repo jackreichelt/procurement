@@ -7,9 +7,10 @@ const Reducer = function(state = INITIAL_STATE, action) {
   
   switch (action.type) {
     case 'SET_QUERY': {
-      console.log('New Query:', action.payload);
+      console.log('action', action)
+      console.log('New Query:', action.query);
       return {
-        query: action.payload
+        query: action.query
       };
     }
   }

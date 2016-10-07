@@ -21,7 +21,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSubmit: (evt) => {
       evt.preventDefault();
+      console.log(evt.target.elements[0].value);
       const query = evt.target.elements[0].value;
+      console.log('query', query)
       const action = {
         type: 'SET_QUERY',
         query
