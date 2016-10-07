@@ -18,7 +18,7 @@ const App = React.createClass({
         <Favicon url={'../assets/favicon.png'}/>
         <Logo />
         <SearchBar />
-        <SearchResults response={sampleData}/>
+        <SearchResults />
       </div>
     );
   }

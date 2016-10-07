@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = React.createClass({
+const Logo = React.createClass({
   render: function() {
     return (
       <img src="../assets/logo.png" />
@@ -8,4 +8,4 @@ const SearchBar = React.createClass({
   }
 });
 
-module.exports = SearchBar;
+module.exports = Logo;
