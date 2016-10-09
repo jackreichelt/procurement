@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-  query: ''
+  query: '',
+  index: '',
 }
 
 const Reducer = function(state = INITIAL_STATE, action) {
@@ -8,9 +9,11 @@ const Reducer = function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'SET_QUERY': {
       console.log('action', action)
-      console.log('New Query:', action.query);
+      console.log('New Query:', action.payload.query);
+      console.log('New Index:', action.payload.index)
       return {
-        query: action.query
+        query: action.payload.query,
+        index: action.payload.index,
       };
     }
   }

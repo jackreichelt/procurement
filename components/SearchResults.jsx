@@ -1,10 +1,8 @@
-import React from 'react';
+import React     from 'react';
 import {connect} from 'react-redux';
 
 const SearchResults = React.createClass({
-  
   _resultElements: function() {
-
     var result = new XMLHttpRequest();
     var response = '';
     
@@ -23,7 +21,7 @@ const SearchResults = React.createClass({
     
     // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
 
-    result.open('POST', 'http://54.164.84.202:8080/v1/search', false);
+    result.open('POST', 'http://54.164.84.202:8080/v1/' + this.props.state.index + '/search', false);
     const data = JSON.stringify({"query":this.props.state.query});
     result.setRequestHeader('Content-Type', 'application/json');
     result.send(data)
@@ -34,12 +32,35 @@ const SearchResults = React.createClass({
 
     return response.hits.hits.map((item, i) => {
       const score = item._score;
-      var itemName = item._source.desc;
-      if (itemName.charAt(0) === '[') {
-        itemName = itemName.substr(1);
+      var itemName = '';
+      var vendor = '';
+
+      // po : desc
+      // nswtender : ctitle
+      // austender : description
+
+      // po : vendor
+      // nswtender : agency
+      // austender : agency
+      switch(this.props.state.index) {
+        case 'po': {
+          itemName = item._source.desc;
+          vendor = item._source.vendor;
+        }
+        case 'nswtender': {
+          itemName = item._source.ctitle;
+          vendor = item._source.agency;
+        }
+        case 'austender': {
+          itemName = item._source.description;
+          vendor = item._source.agency;
+        }
       }
-      const vendor = item._source.vendor;
-      console.log('itemName', itemName);
+
+      // if (itemName.charAt(0) === '[') {
+//         itemName = itemName.substr(1);
+//       }
+      
       return (
         <p key={i}>{score} | {itemName} bought from {vendor}</p>
       );
