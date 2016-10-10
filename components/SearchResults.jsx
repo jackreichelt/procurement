@@ -31,38 +31,19 @@ const SearchResults = React.createClass({
     // response = JSON.parse(result.responseText);
 
     return response.hits.hits.map((item, i) => {
+      console.log('item', i, item);
       const score = item._score;
-      var itemName = '';
-      var vendor = '';
+      var desc = item.proc_desc;
+      const supplier = item.proc_supplier;
+      const date = item.proc_date;
+      const value = item.proc_value;
 
-      // po : desc
-      // nswtender : ctitle
-      // austender : description
-
-      // po : vendor
-      // nswtender : agency
-      // austender : agency
-      switch(this.props.state.index) {
-        case 'po': {
-          itemName = item._source.desc;
-          vendor = item._source.vendor;
-        }
-        case 'nswtender': {
-          itemName = item._source.ctitle;
-          vendor = item._source.agency;
-        }
-        case 'austender': {
-          itemName = item._source.description;
-          vendor = item._source.agency;
-        }
+      if (desc.charAt(0) === '[') {
+        desc = desc.substr(1);
       }
 
-      // if (itemName.charAt(0) === '[') {
-//         itemName = itemName.substr(1);
-//       }
-      
       return (
-        <p key={i}>{score} | {itemName} bought from {vendor}</p>
+        <p key={i}>{score} | {desc} bought from {supplier}</p>
       );
     });
   },
