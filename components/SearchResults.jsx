@@ -5,7 +5,7 @@ const SearchResults = React.createClass({
   _resultElements: function() {
     var result = new XMLHttpRequest();
     var response = '';
-    
+
     result.onreadystatechange = function() {
       if (result.readyState != 4) return; // Not there yet
       if (result.status != 200) {
@@ -16,9 +16,9 @@ const SearchResults = React.createClass({
       // Request successful, read the response
       response = JSON.parse(result.responseText);
       console.log('response.hits.hits', response.hits.hits);
-      
+
     }
-    
+
     // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
 
     result.open('POST', 'http://54.164.84.202:8080/v1/' + this.props.state.index + '/search', false);
@@ -47,7 +47,7 @@ const SearchResults = React.createClass({
       );
     });
   },
-  
+
   render: function() {
     console.log('this', this);
     if (!this.props.state) return null

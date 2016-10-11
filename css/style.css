@@ -1,0 +1,97 @@
+
+.img{
+  padding-top: : 300px;
+  display: block;
+  margin-left: 20% 300 auto;
+}
+
+/* search box */
+.button_box {
+  width: 300px;
+  height: 200px;
+  margin: -100px 0 0 -150px;
+
+}
+
+/* search box style */
+.form-wrapper {
+    padding: 15px 2px 3px 10px;
+  width: 330px;
+
+}
+
+/* search box input inside style*/
+.form-wrapper input {
+width: 210px;
+height: 20px;
+padding: 10px 5px;
+float: left;
+font: lighter 15px 'Raleway', sans-serif;
+letter-spacing: 1px;
+color: #747474;
+border: 0px;
+background: #eee;
+text-indent: 10px;
+}
+
+/* search box input  outside style*/
+.form-wrapper input:focus {
+outline: 0;
+background: #fff;
+-moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+-webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+/* placeholder text */
+.form-wrapper input::-webkit-input-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+  display: inline-block;
+}
+
+
+/* Button style*/
+.form-wrapper button {
+overflow: visible;
+position: relative;
+float: right;
+border: 0;
+padding: 0;
+cursor: pointer;
+height: 40px;
+width: 110px;
+font: bold 15px/40px 'Raleway', sans-serif;
+letter-spacing: 1px;
+color: #fff;
+text-transform: uppercase;
+background: #123F7E;
+-moz-border-radius: 0 3px 3px 0;
+-webkit-border-radius: 0 3px 3px 0;
+border-radius: 0 3px 3px 0;
+text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  display: inline-block;
+}
+
+.form-wrapper button:hover{
+background: #112E58;
+}
+
+/* dropdown menu */
+.dropdown-wrapper {
+  background: #eee;
+  position: relative;
+  float: right;
+  border: 0px;
+  text-indent: 5px;
+  font: 15px 'Raleway', sans-serif;
+  color: #999;
+  height: 40px;
+  width: 110px;
+  letter-spacing: 1px;
+  margin: -12%;
+  text-transform: capitalize;
+   width: 200px;
+    right:-180px;
+}
