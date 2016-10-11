@@ -15,7 +15,7 @@
 
 /* search box style */
 .form-wrapper {
-    padding: 15px 2px 3px 10px;
+  padding: 15px 2px 3px 10px;
   width: 330px;
 
 }
@@ -26,9 +26,9 @@ width: 210px;
 height: 20px;
 padding: 10px 5px;
 float: left;
-font: lighter 15px 'Raleway', sans-serif;
+font: 15px 'Raleway', sans-serif;
 letter-spacing: 1px;
-color: #747474;
+color: 5D5D60;
 border: 0px;
 background: #eee;
 text-indent: 10px;
@@ -86,12 +86,43 @@ background: #112E58;
   border: 0px;
   text-indent: 5px;
   font: 15px 'Raleway', sans-serif;
-  color: #999;
+  color: #999 ;
   height: 40px;
   width: 110px;
   letter-spacing: 1px;
   margin: -12%;
   text-transform: capitalize;
-   width: 200px;
-    right:-180px;
+  width: 200px;
+  right:-180px;
+}
+
+h2 {
+  font: 20px 'Raleway', sans-serif;
+  color: #424246;
+  padding: 100px 10px 20px 15px;
+  margin: 0
+}
+
+.light-wrapper {
+  background: #EEEEEE;
+  padding: 6px;
+  font: 12px 'Raleway', sans-serif;
+  color: #424246;
+}
+
+.dark-wrapper {
+  background: #E6E4E4;
+  padding: 6px;
+  font: 12px 'Raleway', sans-serif;
+  color: #424246;
+}
+
+p {
+  padding: 2px 10px 5px 11px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.item {
+ font: bold 12px 'Raleway', sans-serif;
 }
