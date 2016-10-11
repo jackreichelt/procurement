@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SimilarProjectsList = React.createClass({
-  
+
   _projectElements: function() {
     return this.props.projects.map((project, i) => {
       return (
@@ -12,7 +12,7 @@ const SimilarProjectsList = React.createClass({
       )
     })
   },
-  
+
   render: function() {
     return (
       <div>

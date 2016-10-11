@@ -5,7 +5,7 @@ const SearchBar = React.createClass({
   _indexOptions: function() {
     var result = new XMLHttpRequest();
     var response = '';
-    
+
     result.onreadystatechange = function() {
       if (result.readyState != 4) return; // Not there yet
       if (result.status != 200) {
@@ -17,9 +17,9 @@ const SearchBar = React.createClass({
       response = JSON.parse(result.responseText);
       console.log('index response', response);
     }
-    
+
     // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
-    
+
     console.log('making request')
     result.open('GET', 'http://54.164.84.202:8080/v1/esindex', false);
     console.log('sending request')
@@ -30,6 +30,7 @@ const SearchBar = React.createClass({
     return response.esindex.map((item, i) => {
       return (
         <option
+          className="li"
           value={item}
           key={i + 1}
         >{item}</option>
@@ -38,10 +39,10 @@ const SearchBar = React.createClass({
   },
   render: function() {
     return (
-      <form onSubmit={this.props.onSubmit}>
-        <input type='text' placeholder='Enter your search terms' className="field m1"/>
+      <form className="form-wrapper" onSubmit={this.props.onSubmit}>
+        <input type='text' placeholder='Search here...' className="field m1"/>
         <button className="btn btn-primary" type='submit'>Search</button>
-        <select>
+        <select className="dropdown-wrapper">
           {this._indexOptions()}
         </select>
       </form>
