@@ -42,9 +42,24 @@ const SearchResults = React.createClass({
         desc = desc.substr(1);
       }
 
-      return (
-        <p key={i}>{score} | {desc} bought from {supplier}</p>
-      );
+      if (i % 2 === 0) {
+        // light background
+        return (
+          <div className="light-wrapper" key={i}>
+            <p className="item">{desc}</p>
+            <p>{supplier}</p>
+          </div>
+        );
+      } else {
+        // dark background
+        return (
+          <div className="dark-wrapper" key={i}>
+            <p className="item">{desc}</p>
+            <p>{supplier}</p>
+          </div>
+        );
+      }
+
     });
   },
 
