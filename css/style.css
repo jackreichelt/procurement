@@ -10,14 +10,12 @@
   width: 300px;
   height: 200px;
   margin: -100px 0 0 -150px;
-
 }
 
 /* search box style */
 .form-wrapper {
   padding: 15px 2px 3px 10px;
   width: 330px;
-
 }
 
 /* search box input inside style*/
@@ -28,10 +26,11 @@ padding: 10px 5px;
 float: left;
 font: 15px 'Raleway', sans-serif;
 letter-spacing: 1px;
-color: 5D5D60;
+color:#7B7B83;
 border: 0px;
 background: #eee;
 text-indent: 10px;
+color: 7B7B83;
 }
 
 /* search box input  outside style*/
@@ -48,9 +47,8 @@ box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 color: #999;
 font-weight: normal;
 font-style: italic;
-  display: inline-block;
+display: inline-block;
 }
-
 
 /* Button style*/
 .form-wrapper button {
@@ -71,7 +69,7 @@ background: #123F7E;
 -webkit-border-radius: 0 3px 3px 0;
 border-radius: 0 3px 3px 0;
 text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-  display: inline-block;
+display: inline-block;
 }
 
 .form-wrapper button:hover{
@@ -86,7 +84,7 @@ background: #112E58;
   border: 0px;
   text-indent: 5px;
   font: 15px 'Raleway', sans-serif;
-  color: #999 ;
+  color:#7B7B83;
   height: 40px;
   width: 110px;
   letter-spacing: 1px;
@@ -105,20 +103,26 @@ h2 {
 
 .light-wrapper {
   background: #EEEEEE;
-  padding: 6px;
+  padding: 25px;
   font: 12px 'Raleway', sans-serif;
   color: #424246;
+  margin:auto;
+  margin-left: 7px;
+  text-indent: -10px;
 }
 
 .dark-wrapper {
   background: #E6E4E4;
-  padding: 6px;
+  padding: 25px;
   font: 12px 'Raleway', sans-serif;
   color: #424246;
+  margin:auto;
+  margin-left: 7px;
+  text-indent: -10px;
 }
 
 p {
-  padding: 2px 10px 5px 11px;
+  padding: 1px 1px 3px 0px;
   margin: 0;
   text-transform: capitalize;
 }
