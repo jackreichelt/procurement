@@ -10,14 +10,12 @@
   width: 300px;
   height: 200px;
   margin: -100px 0 0 -150px;
-
 }
 
 /* search box style */
 .form-wrapper {
   padding: 15px 2px 3px 10px;
   width: 330px;
-
 }
 
 /* search box input inside style*/
@@ -33,7 +31,6 @@ border: 0px;
 background: #eee;
 text-indent: 10px;
 color: 7B7B83;
-
 }
 
 /* search box input  outside style*/
@@ -50,9 +47,8 @@ box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 color: #999;
 font-weight: normal;
 font-style: italic;
-  display: inline-block;
+display: inline-block;
 }
-
 
 /* Button style*/
 .form-wrapper button {
@@ -73,7 +69,7 @@ background: #123F7E;
 -webkit-border-radius: 0 3px 3px 0;
 border-radius: 0 3px 3px 0;
 text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-  display: inline-block;
+display: inline-block;
 }
 
 .form-wrapper button:hover{
@@ -112,7 +108,7 @@ h2 {
   color: #424246;
   margin:auto;
   margin-left: 7px;
-    text-indent: -10px;
+  text-indent: -10px;
 }
 
 .dark-wrapper {
@@ -123,7 +119,6 @@ h2 {
   margin:auto;
   margin-left: 7px;
   text-indent: -10px;
-
 }
 
 p {
