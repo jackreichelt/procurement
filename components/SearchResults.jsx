@@ -21,7 +21,7 @@ const SearchResults = React.createClass({
 
     // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
 
-    result.open('POST', 'http://54.164.84.202:8080/v1/' + this.props.state.index + '/search', false);
+    result.open('POST', 'http://54.159.210.119:8080/v1/' + this.props.state.index + '/search', false);
     const data = JSON.stringify({"query":this.props.state.query});
     result.setRequestHeader('Content-Type', 'application/json');
     result.send(data)
@@ -30,13 +30,19 @@ const SearchResults = React.createClass({
     console.log('Request resolved', result);
     // response = JSON.parse(result.responseText);
 
+    function toTitleCase(str)
+    {
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
+
     return response.hits.hits.map((item, i) => {
       console.log('item', i, item);
       const score = item._score;
-      var desc = item.proc_desc;
-      const supplier = item.proc_supplier;
+      var desc = toTitleCase(item.proc_desc);
+      const supplier = toTitleCase(item.proc_supplier);
       const date = item.proc_date;
       const value = item.proc_value;
+      var agency = item.proc_agency != null ? toTitleCase(item.proc_agency) : "Unknown Agency"
 
       if (desc.charAt(0) === '[') {
         desc = desc.substr(1);
@@ -46,16 +52,18 @@ const SearchResults = React.createClass({
         // light background
         return (
           <div className="light-wrapper" key={i}>
-            <p className="item">{desc}</p>
-            <p>{supplier}</p>
+            <p className="item">{desc}  by {agency}</p>
+            <p>From {supplier}  on {date}  for ${value}</p>
+            <p><a href="http://somewhere:8080/?">More Info</a></p>
           </div>
         );
       } else {
         // dark background
         return (
           <div className="dark-wrapper" key={i}>
-            <p className="item">{desc}</p>
-            <p>{supplier}</p>
+            <p className="item">{desc} by {agency}</p>
+            <p>From {supplier} on {date} for ${value}</p>
+            <p><a href="http://fake:8080/?">More Info</a></p>
           </div>
         );
       }

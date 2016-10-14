@@ -21,7 +21,7 @@ const SearchBar = React.createClass({
     // result.open("GET", "http://54.164.84.202:8080/v1/esindex", true);
 
     console.log('making request')
-    result.open('GET', 'http://54.164.84.202:8080/v1/esindex', false);
+    result.open('GET', 'http://54.159.210.119:8080/v1/esindex', false);
     console.log('sending request')
     result.send()
     console.log('request sent')

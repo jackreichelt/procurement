@@ -3,7 +3,7 @@ import React from 'react';
 const Logo = React.createClass({
   render: function() {
     return (
-      <img src="../assets/logo.png" />
+      <a href="http://localhost:8080/"><img src="../assets/logo.png" /></a>
     )
   }
 });
